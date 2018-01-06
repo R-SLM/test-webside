@@ -1,0 +1,139 @@
+﻿/*less官网：lesscss.org  www.lesscss.net*/
+/*.less转换为.css需要动态样式预处理器*/
+/*
+    1、下载并安装独立的js解释器Node.js，在window命令输入“node -v”可查看是否安装及版本
+    2、把less转为css，在window命令输入“node lessc文件路径 less文件路径 css文件路径”，lessc在node路径下有
+    npm install -g less 可在线安装lessc工具
+*/
+body{
+    margin:0;
+    font-size:14px;
+}
+
+@jd_red:#e4393c;//声明一个颜色变量
+@std_margin:10px;//声明一个margin变量
+.box{
+    margin:@std_margin*3;//等同于：margin:30px;
+    color:@jd_red;//等同于：color:#e4393c;
+    border:@std_margin solid @jd_red;//等同于：border:10px solid #e4393c;
+    background:lighten(@jd_red,30%);//等同于：#e4393c变淡30%
+}
+
+//----------1、Less变量----------
+//定义变量：@变量名:变量值;
+//使用变量：选择器{color:@变量名;}
+@std_color:#e4393c;
+@thick_border:4px;
+@half_opacity:0.6;
+@std_font:"SimHei";
+@std_border:solid;
+.well{
+    border:@thick_border @std_border @std_color;
+    color:@std_color;
+}
+//----------2、变量和常量运算----------
+/* @high_opacity:
+   @half_opacity/2;   等同于在一行执行如下
+   */
+@high_opacity:@half_opacity/2;
+@gutter:30px;
+.well{
+    opacity:@high_opacity;
+}
+.col{
+    padding-left:@gutter/2;
+    padding-right:@gutter/2;
+}
+//----------3、超级变量(混合Mixin)----------
+//说明：选择器中可以写入其他选择器，如此该选择器将拥有写入的选择器的所有样式
+.full{
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+.modal{
+    position:fixed;
+    .full;
+    .col;
+}
+.carousel{
+    position:relative;
+    .full;
+}
+//----------4、带参混入----------
+//选择器可以带参数和默认值，使用带参数的选择器时，需要传递参数。
+//只有括号没有参数时，生成css时不会被认为是选择器，即不会生成css，只能被使用
+.box(@mg,@pd:1px){
+    padding:@pd;
+    margin:@mg;
+    border:@mg*20;
+}
+.base(){
+    color:#333;
+}
+.alert{
+    .box(8px,8px);
+    .base;
+}
+.panel{
+    .box(4px);
+    .base;
+}
+//----------5、样式嵌套----------
+//下列两个样式效果一致
+#main{
+    width:970px;
+}
+#main .box{
+    border:1px;
+}
+#main .box ul{
+    list-style:none;
+}
+#main .box ul>li{
+    float:left;
+}
+#main .box ul>li a{
+    color:#333;
+}
+#main .box ul>li a:hover{
+    color:#00f;
+}
+#main{
+    width:970px;
+    .box{
+        border:1px;
+        ul{
+            list-style:none;
+            >li{
+                float:left;
+                a{
+                    color:#000;
+                    &:hover{//&为当前元素
+                        color:#f00;
+                    }
+                }
+            }
+        }
+    }
+}
+//----------6、内置函数----------
+.small2{
+    //width:image-width('../Images/58d4e93cN0a32075a.jpg!q90.webp.jpg');//获取图片宽度
+    //height:image-height('../Images/58d4e93cN0a32075a.jpg!q90.webp.jpg');//获取图片高度
+}
+@container-width:970px;
+.col-1{
+    width:floor(@container-width/12);//向下取整，上取整为ceil()
+}
+@jdred:#e4393c;
+@red-light:lighten(@jdred,10%);//颜色变淡10%
+@red-dark:darken(@jdred,10%);//颜色变暗10%
+.box{
+    color:@jdred;
+    background:@red-light;
+    border-color:@red-dark;
+}
+//----------7、文件导入----------
+//@import "nothing.less";//导入nothing.less生成后的样式

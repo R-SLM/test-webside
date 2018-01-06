@@ -1,0 +1,476 @@
+/*默认样式*/
+
+a{
+	color:#707070;
+}
+section{
+	position:relative;
+}
+.h5{
+	margin:0px;display: block;
+	font-family: 'Montserrat', sans-serif;
+}
+.h1{
+font-size:50px;
+display: block;
+margin:45px 0 0 0; 
+font-family: 'Montserrat', sans-serif;
+}
+body{
+	padding-top: 90px;
+    color: #637988;
+    font-size:15px;
+    font-family: 'Crimson Text', serif;
+    line-height: 1.7;
+}
+
+/*导航栏*/
+
+.my-navbar{
+	/*background-color:transparent;*/
+	background-color:#fff;
+}
+.navbar-brand img{
+	max-height:44px;
+}
+.navbar-brand{
+	height: 90px;
+	padding:23px;
+}
+.navbar-nav li a{
+	padding:35px 25px;
+	font-size:13px;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	/*文字转换大写*/
+}
+
+/*想要覆盖bootstrap的样式必须考虑优先级如下：(从顶级一直到下级的最高优先级以及带有直接子类的（ > ）)*/
+/*
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color:#00c7fc;
+	background-color:transparent;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color:#00c7fc;
+	background-color:transparent;
+}
+*/
+/*或者用新的类定义不用bootstrap的,会缺失部分样式(看情况定)*/
+
+
+/*悬浮是悬浮的样式，点击（是聚焦的样式）点击后移动鼠标悬浮失去，聚焦不会失去。*/
+
+.nav li a:hover,.nav li a:focus {
+	color:#00c7fc;
+	background-color:transparent;
+}
+
+/*.nav li.active代表（class）nav下的带有（class）active的li标签*下的a标签 */
+
+.nav li.active a{
+	color:#00c7fc;
+	background-color:transparent;
+}
+.icon-bar{
+	background: #707070;
+}
+.navbar-toggle{
+	margin:27px 15px;
+}
+.navbar-toggle:hover .icon-bar,.navbar-toggle:focus .icon-bar{
+	background:#00c7fc;
+}
+
+/*home页面*/
+
+#home{
+	height:725px;
+	background:url(../img/header.jpg) center center no-repeat;
+	background-size:cover;
+	text-transform:uppercase;
+}
+.home-wrapcolor{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.8);
+	display:block;
+}
+.home-content{
+	width:100%;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	text-align:center;
+	color:#fff;
+}
+.content-button{
+	margin-top:54px;
+}
+.content-button .btn{
+	letter-spacing: 0.3em;
+	margin:0 15px;
+	padding: 0;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	box-sizing: border-box;
+	color: #fff;
+	transition: all 0.3s;
+	outline: none;
+	box-shadow: none;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+.content-button .btn-default{
+	background-color: transparent;
+	border: 1px solid #fff;
+}
+.content-button .btn-default:hover{
+	background-color:#fff;
+	color:#00c7fc;
+	border-color:#fff;
+}
+.content-button .btn-primary{
+	background-color: #00c7fc;
+	border-color:#00c7fc;
+}
+.content-button .btn-primary:hover{
+	background-color:transparent;
+	color:#00c7fc;
+}
+.down-icon{
+	position:absolute;
+	left:50%;
+	bottom:0;
+	transform:translateX(-50%);
+	padding:25px;
+}
+.down-arrow{
+	animation: scrollDown 2.5s infinite;
+}
+
+@keyframes scrollDown{
+	0%,20%,50%,80%,100%{
+		transform:translateY(0px);
+	}
+	40%{
+		transform:translateY(-30px);
+	}
+	60%{
+		transform:translateY(-10px);
+	}
+}
+
+
+/*history页面*/
+
+#history{ 
+	padding:145px 0;
+	background:#f4f4f4;
+	 }
+.history-content{
+	text-align:center;
+}
+.history-title{
+	display:block;
+	color:#231f20;
+	font-size:25px;
+	font-weight: 500;
+	margin:0;
+}
+.history-content p{
+	font-size: 15px;
+	margin:0;
+	padding-top:42px;
+}
+.history-title:after{
+	content:'';
+	width:100%;
+	height:20px;
+	background:url(img/svg/separator.svg) center center no-repeat;
+	margin-top:45px;
+	display: block;
+}
+
+/*portfolio页面*/
+
+#portfolio{
+	background:#f4f4f4;
+}
+.portfolio-gallary{
+	margin-bottom:145px;
+}
+.gallary-warp{
+	position: relative;
+	overflow: hidden;
+	margin-top: 25px;
+}
+.gallary-warp img{
+	width: 100%;
+}
+.gallary-info{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 60%;
+	background:#04a3ce;
+	text-align: center;
+	color:#fff;
+	transform: translateY(100%);
+	transition: all 2s;
+}
+.gallary-warp:hover .gallary-info{
+	transform: translateY(0);
+}
+.gallary-info span{
+	letter-spacing: 0.2em;
+	display: block;
+	font-size:15px;
+	margin:15% 0;
+	text-transform: uppercase;
+}
+.gallary-info p{
+	display: block;
+	margin: 0;
+	font-size:15px;
+	padding:0 10%;
+}
+
+
+/*services页面*/
+#services{
+	padding:145px 0;
+	background:#f4f4f4;
+}
+.services-content{
+	background:#fff;
+	padding:35px 45px;
+	margin-top:20px;
+}
+figure{
+	display: block;
+	text-align:center;
+}
+figure img{
+	padding-top:25px;
+}
+figcaption{
+	display: block;
+	text-align:center;
+	padding:25px 15px;
+	letter-spacing: 0.2em;
+	color:#000;
+
+}
+.divider{
+	width:8%;
+	padding: 1px;
+	background: #00c7fc;
+	margin: 25px auto 0;
+}
+.services-content p{
+	margin:0 auto;
+	display: block;
+	text-align:center;
+	padding-top:35px;
+	padding-bottom:60px;
+	width:80%;
+
+}
+
+/*clients页面*/
+#clients{
+	background:#fff;
+	padding:145px 0;
+}
+.clients-content{
+	text-align:center;
+}
+.clients-content-title{
+	font-size:25px;
+	color:#000;
+	letter-spacing: 0.1em;
+}
+.clients-content-title:after{
+	background:url(img/svg/separator.svg) center center no-repeat;
+	height: 20px;
+	width:100%;
+	display: block;
+	content:'';
+	margin-top:45px;
+}
+blockquote{
+	border-left: none;
+	margin-top:45px;
+}
+blockquote p{
+	font-size:15px;
+	color:#000;
+}
+
+
+.client-logo{
+	margin-top:25px; 
+	text-align: center;
+}
+.client-logo-item{
+	text-align: center;
+	margin-top:30px;
+}
+.client-logo-item img{
+}
+cite{font-size:14px;}
+
+
+/*contact页面*/
+#contact{
+	padding:45px 0;
+	background: #101012;
+	display:block;
+}
+.contact-us,.about-us{
+	border:1px solid #707070;
+	text-align: center;
+	display:block;
+	padding:50px 50px 80px;
+	margin-top:30px;
+}
+.contact-us h3,.about-us h3{
+	padding-top:50px;
+	display:block;
+	color:#fff;
+}
+.about-us h3:after{
+	content: '';
+	width:5%;
+	display:block;
+	padding:1px;
+	background:#00c7fc;
+	padding:1px;
+	margin:45px auto 0;
+}
+.about-us p{
+	padding-top: 45px;
+	display:block;
+	color:#fff;
+	font-size: 17px;
+
+}
+form{
+	padding-top:20px;
+	color:#fff;
+}
+label{
+	font-size: 18px;
+	text-align: left;
+	display: block;
+	font-weight: normal;
+	padding-top:15px;
+}
+.form-control{
+	height: auto;
+}
+.form-control:focus{
+	background: linear-gradient(transparent 38px, #fff 1px);
+	background-size: 100% 39px;
+	background-repeat: repeat-y;
+	border-color:none;
+	box-shadow:none;
+}
+.form-group input{	
+	background: linear-gradient(transparent 38px, #707070 1px);
+	background-size: 100% 39px;
+	background-repeat: repeat-y;
+	border:0;
+	margin:0;
+	padding:0;
+	font-size: 17px;
+	line-height: 40px;
+	vertical-align: bottom;
+	color:#fff;
+}
+.form-group	textarea{
+    resize: none;
+    background: linear-gradient(transparent 38px, #707070 1px);
+    /*linear-gradient线性渐变 ，透明到#707070色，默认从上到下*/
+    background-size: 100% 39px;
+    /*宽度，高度*/
+    background-repeat: repeat-y;
+    border:0;
+    margin:0;
+    padding:0;
+    font-size: 17px;
+    line-height: 40px;
+    color:#fff;
+}
+.button-type{
+	border:none;
+	background:transparent;
+	font-size:18px;
+	color: #00c7fc;
+	text-transform: uppercase;
+
+}
+.button-type:after{
+	clear:both;
+	padding:15px 30px;
+}
+.contact-us .button-type:hover,.contact-us .button-type:focus,.contact-us .button-type:active,.btn:focus{
+	outline:none;
+	border:none;
+	border-color:transparent;
+	background-color:transparent;
+	background:transparent;
+	color:#fff;
+}
+
+/*footer*/
+	#footer{
+		padding:50px;
+		background:#00c7fc;
+	}
+	#footer p{
+		color:#fff;
+		
+	}
+	#footer a{	}
+
+@media only screen and (max-width: 1200px) {
+	label{
+		padding-top:43px;
+	}
+}
+
+
+
+@media only screen and (max-width: 767px) {
+	.navbar-collapse{
+		border-color: #e7e7e7;
+	}
+	.navbar-nav li{
+		text-align: center;
+	}
+	.navbar-nav li a{
+		padding:20px 0;
+	}
+	.h1{
+	font-size:42px;
+	}
+	.content-button .btn-primary{
+		display:block;
+		margin:0 auto;
+	}
+	.content-button .btn-default{
+		display:block;
+		margin:0 auto;
+	}
+	.content-button .btn{
+		margin-top:30px;
+	}
+
+}

@@ -1,0 +1,122 @@
+body {
+	margin: 0;
+	font-size: 14px
+}
+
+.box {
+	margin: 30px;
+	color: #e4393c;
+	border: 10px solid #e4393c;
+	background: #f6c0c1
+}
+
+.well {
+	border: 4px solid #e4393c;
+	color: #e4393c
+}
+
+.well {
+	opacity: .3
+}
+
+.col {
+	padding-left: 15px;
+	padding-right: 15px
+}
+
+.full {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0
+}
+
+.modal {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	padding-left: 15px;
+	padding-right: 15px
+}
+
+.carousel {
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0
+}
+
+.alert {
+	padding: 8px;
+	margin: 8px;
+	border: 160px;
+	color: #333
+}
+
+.panel {
+	padding: 1px;
+	margin: 4px;
+	border: 80px;
+	color: #333
+}
+
+#main {
+	width: 970px
+}
+
+#main .box {
+	border: 1px
+}
+
+#main .box ul {
+	list-style: none
+}
+
+#main .box ul>li {
+	float: left
+}
+
+#main .box ul>li a {
+	color: #333
+}
+
+#main .box ul>li a:hover {
+	color: #00f
+}
+
+#main {
+	width: 970px
+}
+
+#main .box {
+	border: 1px
+}
+
+#main .box ul {
+	list-style: none
+}
+
+#main .box ul>li {
+	float: left
+}
+
+#main .box ul>li a {
+	color: #000
+}
+
+#main .box ul>li a:hover {
+	color: red
+}
+
+.col-1 {
+	width: 80px
+}
+
+.box {
+	color: #e4393c;
+	background: #ea6668;
+	border-color: #ce1c1f
+}
