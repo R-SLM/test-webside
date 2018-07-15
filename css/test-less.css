@@ -1,122 +1,115 @@
+/*less官网：lesscss.org  www.lesscss.net*/
+/*.less转换为.css需要动态样式预处理器*/
+/*
+    1、下载并安装独立的js解释器Node.js，在window命令输入“node -v”可查看是否安装及版本
+    2、把less转为css，在window命令输入“node lessc文件路径 less文件路径 css文件路径”，lessc在node路径下有
+    npm install -g less 可在线安装lessc工具
+*/
 body {
-	margin: 0;
-	font-size: 14px
+  margin: 0;
+  font-size: 14px;
 }
-
 .box {
-	margin: 30px;
-	color: #e4393c;
-	border: 10px solid #e4393c;
-	background: #f6c0c1
+  margin: 30px;
+  color: #e4393c;
+  border: 10px solid #e4393c;
+  background: #f6c0c1;
+  /* less内部函数 */
 }
-
 .well {
-	border: 4px solid #e4393c;
-	color: #e4393c
+  border: 4px solid #e4393c;
+  color: #e4393c;
 }
-
+/* @high_opacity:
+   @half_opacity/2;   等同于在一行执行如下
+   */
 .well {
-	opacity: .3
+  opacity: 0.3;
 }
-
 .col {
-	padding-left: 15px;
-	padding-right: 15px
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 .full {
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
-
 .modal {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	padding-left: 15px;
-	padding-right: 15px
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 .carousel {
-	position: relative;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
-
 .alert {
-	padding: 8px;
-	margin: 8px;
-	border: 160px;
-	color: #333
+  /* 注意左边带参函数的用法 */
+  padding: 8px;
+  margin: 8px;
+  border: 160px;
+  color: #333;
 }
-
 .panel {
-	padding: 1px;
-	margin: 4px;
-	border: 80px;
-	color: #333
+  /* 注意左边带参函数的用法 */
+  padding: 1px;
+  margin: 4px;
+  border: 80px;
+  color: #333;
 }
-
 #main {
-	width: 970px
+  width: 970px;
 }
-
 #main .box {
-	border: 1px
+  border: 1px;
 }
-
 #main .box ul {
-	list-style: none
+  list-style: none;
 }
-
-#main .box ul>li {
-	float: left
+#main .box ul > li {
+  float: left;
 }
-
-#main .box ul>li a {
-	color: #333
+#main .box ul > li a {
+  color: #333;
 }
-
-#main .box ul>li a:hover {
-	color: #00f
+#main .box ul > li a:hover {
+  color: #00f;
 }
-
 #main {
-	width: 970px
+  width: 970px;
 }
-
 #main .box {
-	border: 1px
+  border: 1px;
 }
-
 #main .box ul {
-	list-style: none
+  list-style: none;
 }
-
-#main .box ul>li {
-	float: left
+#main .box ul > li {
+  float: left;
 }
-
-#main .box ul>li a {
-	color: #000
+#main .box ul > li a {
+  color: #000;
 }
-
-#main .box ul>li a:hover {
-	color: red
+#main .box ul > li a:hover {
+  /* 在使用伪类时&为当前元素(自己)，否则代表子代 */
+  color: #f00;
 }
-
 .col-1 {
-	width: 80px
+  width: 80px;
+  /*  向下取整，上取整为ceil() */
 }
-
+/* lighten函数，颜色变淡10%，改变的是颜色的数值。然后再由数值决定颜色（红色变成粉色） */
 .box {
-	color: #e4393c;
-	background: #ea6668;
-	border-color: #ce1c1f
+  color: #e4393c;
+  background: #ea6668;
+  border-color: #ce1c1f;
 }
